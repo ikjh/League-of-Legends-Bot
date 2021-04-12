@@ -1,5 +1,6 @@
 ﻿
 using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Drawing;
 using LeagueBot.Patterns;
@@ -12,6 +13,8 @@ namespace LeagueBot
     {
         private static ChampionEnum[] Champions = new ChampionEnum[]
         {
+	    ChampionEnum.Tristana, //
+            //ChampionEnum.Caitlin, //
             ChampionEnum.Veigar,
             ChampionEnum.Annie,
             ChampionEnum.Amumu,
@@ -45,7 +48,10 @@ namespace LeagueBot
             }
 
             bot.log("Summoner loaded "+ client.summoner.displayName);
-
+            bot.log("Level" + client.summoner.summonerLevel);
+            
+            //File.WriteAllText("X:\\LeagueBot\\Accounts\\" + client.summoner.displayName + ".txt", client.summoner.summonerLevel.ToString());
+            
             bot.wait(3000);
 
             client.createLobby(QueueType);
@@ -106,7 +112,7 @@ namespace LeagueBot
 
             bot.log("Match founded.");
 
-            bot.wait(5000);
+            bot.wait(1500); //
 
             bool picked = false;
 

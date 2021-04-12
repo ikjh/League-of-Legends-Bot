@@ -27,7 +27,7 @@ namespace LeagueBot.Game.Misc
         {
             if (Opened)
             {
-                InputHelper.PressKey("Escape");
+                InputHelper.PressKey("P");
             }
             else
             {

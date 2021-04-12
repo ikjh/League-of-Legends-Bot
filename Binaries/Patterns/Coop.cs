@@ -25,17 +25,18 @@ namespace LeagueBot
 
         private Item[] Items = new Item[]
         {
-            new Item("Doran's Ring",400),
-            new Item("Health Potion",50),
-            new Item("Warding Totem",0),
+            new Item("Dorans Blade",450),
             new Item("Boots of Speed",300),
-            new Item("Lost Chapter",1300),
-            new Item("Sorcerer's Shoes",800),
-            new Item("Blasting Wand",850),
-            new Item("Luden's Echo",1050), // <--- Cost when Lost Chapter & Blasting Wand were bought
-            new Item("Needlessly Large Rod",1250),
-            new Item("Needlessly Large Rod",1250),
-            new Item("Rabadon's Deathcap",1100), 
+            new Item("Bf Sword",1300),
+            new Item("Dagger",300),
+            new Item("Berserkers Greaves",500),
+            new Item("Long Sword",350),
+            new Item("Vampiric Scepter",900),
+            new Item("Bilgewater Cutlass",350),
+	    new Item("Dagger",300),
+	    new Item("Dagger",300),
+	    new Item("Recurve Bow",400),
+	    new Item("Blade of the Ruined King",700),
         };
 
         public override bool ThrowException 
@@ -178,7 +179,7 @@ namespace LeagueBot
 
                 if (game.player.getManaPercent() <= 0.10d)
                 {
-                    isRecalling = true;
+                    //isRecalling = true;
                     continue;
                 }
 
@@ -190,11 +191,11 @@ namespace LeagueBot
         }
         private void OnDie()
         {
-            BuyItems();
+            //BuyItems();
         }
         private void OnSpawnJoin()
         {
-            BuyItems();
+            //BuyItems();
             AllyIndex = game.getAllyIdToFollow();
             game.camera.lockAlly(AllyIndex);
         }
